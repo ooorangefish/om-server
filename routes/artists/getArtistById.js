@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
 
   const artistQuery = `
     SELECT 
-      artists.id, artists.name, artists.bio, artists.profile_image AS profileImage
+      artists.id, artists.name, artists.location, artists.type, artists.bio, artists.profile_image AS profileImage
     FROM artists
     WHERE artists.id = ?
   `;
