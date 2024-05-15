@@ -38,6 +38,7 @@ const getAlbumsRouter = require("./routes/albums/allAlbums");
 const deleteAlbumRouter = require("./routes/albums/deleteAlbum");
 const getAlbumByIdRouter = require("./routes/albums/getAlbumById");
 const getAlbumsByArtistIdRouter = require("./routes/albums/getAlbumsByArtistId");
+const updateAlbumRouter = require("./routes/albums/updateAlbum");
 
 // --------- RECOMMENDATIONS ROUTES ------------
 const addRecommendationRouter = require("./routes/recommendations/addRecommendation");
@@ -93,6 +94,7 @@ app.use("/albums", getAlbumsRouter);
 app.use("/deleteAlbum", deleteAlbumRouter);
 app.use("/album", getAlbumByIdRouter);
 app.use("/albumsByArtistId", getAlbumsByArtistIdRouter);
+app.use("/updateAlbum", updateAlbumRouter);
 
 app.use("/addRecommendation", addRecommendationRouter);
 app.use("/recommendations", getRecommendationsRouter);
