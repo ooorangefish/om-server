@@ -5,8 +5,8 @@ const toCamelCase = require("../../utils/toCamelCase");
 
 router.get("/", (req, res) => {
   const query = `
-    SELECT 
-      songs.id, songs.title, songs.duration, 
+    SELECT
+      songs.id, songs.title, songs.duration, songs.file_path,
       albums.id AS albumId, albums.title AS albumTitle, albums.release_date AS albumReleaseDate, albums.cover_image AS albumCoverImage, albums.genre AS albumGenre,
       artists.id AS artistId, artists.name AS artistName, artists.profile_image AS artistProfileImage
     FROM songs

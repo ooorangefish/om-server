@@ -29,26 +29,20 @@ const addSongRouter = require("./routes/songs/addSong");
 const uploadSongRouter = require("./routes/songs/uploadSong");
 const getSongsByArtistIdRouter = require("./routes/songs/getSongsByArtistId");
 const getSongsByAlbumIdRouter = require("./routes/songs/getSongsByAlbumId");
+const updateSongRouter = require("./routes/songs/updateSong");
+const deleteSongRouter = require("./routes/songs/deleteSong");
 
 // --------- ALBUMS ROUTES ------------
 const addAlbumRouter = require("./routes/albums/addAlbum");
 const getAlbumsRouter = require("./routes/albums/allAlbums");
 const deleteAlbumRouter = require("./routes/albums/deleteAlbum");
 const getAlbumByIdRouter = require("./routes/albums/getAlbumById");
-const getAlbumsByArtistIdRouter = require(
-  "./routes/albums/getAlbumsByArtistId",
-);
+const getAlbumsByArtistIdRouter = require("./routes/albums/getAlbumsByArtistId");
 
 // --------- RECOMMENDATIONS ROUTES ------------
-const addRecommendationRouter = require(
-  "./routes/recommendations/addRecommendation",
-);
-const getRecommendationsRouter = require(
-  "./routes/recommendations/getRecommendations",
-);
-const deleteRecommendationRouter = require(
-  "./routes/recommendations/deleteRecommendation",
-);
+const addRecommendationRouter = require("./routes/recommendations/addRecommendation");
+const getRecommendationsRouter = require("./routes/recommendations/getRecommendations");
+const deleteRecommendationRouter = require("./routes/recommendations/deleteRecommendation");
 const newReleasesRouter = require("./routes/recommendations/getNewReleases");
 
 const searchRouter = require("./routes/search");
@@ -91,6 +85,8 @@ app.use("/addSong", addSongRouter);
 app.use("/uploadSong", uploadSongRouter);
 app.use("/songsByArtistId", getSongsByArtistIdRouter);
 app.use("/songsByAlbumId", getSongsByAlbumIdRouter);
+app.use("/updateSong", updateSongRouter);
+app.use("/deleteSong", deleteSongRouter);
 
 app.use("/addAlbum", addAlbumRouter);
 app.use("/albums", getAlbumsRouter);

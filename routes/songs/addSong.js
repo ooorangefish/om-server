@@ -3,7 +3,9 @@ const router = express.Router();
 const pool = require("../../db.js");
 
 router.post("/", (req, res) => {
-  const { title, duration, albumId } = req.body;
+  const { title, duration, albumId, filePath } = req.body;
+
+  console.log("filePath", filePath);
 
   // First, fetch the artist_id from the albums table
   pool.query(
@@ -21,8 +23,8 @@ router.post("/", (req, res) => {
 
       // Then, insert the new song into the songs table with the fetched artist_id
       pool.query(
-        "INSERT INTO songs (title, duration, album_id, artist_id) VALUES (?, ?, ?, ?)",
-        [title, duration, albumId, artistId],
+        "INSERT INTO songs (title, duration, album_id, artist_id, file_path) VALUES (?, ?, ?, ?, ?)",
+        [title, duration, albumId, artistId, filePath],
         (insertError) => {
           if (insertError) {
             return res.status(500).json({ error: insertError.message });
